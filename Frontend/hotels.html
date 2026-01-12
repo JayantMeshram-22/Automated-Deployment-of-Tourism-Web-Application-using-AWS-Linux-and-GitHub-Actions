@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Affordable Hotels - Maheshwar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+    }
+    header {
+      background: #222;
+      padding: 15px 20px;
+      color: #fff;
+      text-align: center;
+    }
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .discover-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .discover-container h1 {
+      text-align: center;
+      font-size: 36px;
+      color: #ff9800;
+      margin-bottom: 10px;
+    }
+    .discover-container p.description {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+      color: #555;
+    }
+    .spots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+    .spot-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .spot-card:hover {
+      transform: scale(1.03);
+    }
+    .spot-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .spot-card .content {
+      padding: 15px;
+      flex-grow: 1;
+    }
+    .spot-card h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #ff9800;
+    }
+    .spot-card p {
+      font-size: 14px;
+      margin: 10px 0;
+      color: #444;
+    }
+    .spot-card .book-btn {
+      display: block;
+      width: calc(100% - 30px);
+      margin: 10px auto 15px;
+      padding: 10px;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .spot-card .book-btn:hover {
+      background-color: #e68a00;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><span>M</span>aheshwar Tourism</div>
+  </header>
+  <section class="discover-container">
+    <h1>Affordable Hotels in Maheshwar</h1>
+    <p class="description">Stay in locally run hotels that offer comfort, tradition, and affordable prices.</p>
+    <div class="spots-grid">
+
+      <div class="spot-card">
+        <img src="./images/Raj-palace.jpg" alt="Hotel Raj Palace">
+        <div class="content">
+          <h3>Hotel Raj Palace</h3>
+          <p>Near Ahilya Fort. River view rooms. ₹799/night</p>
+        </div>
+        <a class="book-btn" href="hotel-booking.html">Book Now</a>
+      </div>
+
+      <div class="spot-card">
+        <img src="./images/GanagaGuesthouse.jpg" alt="Ganga Guesthouse">
+        <div class="content">
+          <h3>Ganga Guesthouse</h3>
+          <p>Temple-side budget stay. Peaceful and clean. ₹699/night</p>
+        </div>
+        <a class="book-btn" href="hotel-booking.html">Book Now</a>
+      </div>
+
+      <div class="spot-card">
+        <img src="./images/HeritageInn.jpg" alt="Heritage Inn">
+        <div class="content">
+          <h3>Heritage Inn</h3>
+          <p>Rustic rooms & rooftop thali meals. ₹999/night</p>
+        </div>
+        <a class="book-btn" href="hotel-booking.html">Book Now</a>
+      </div>
+
+      <div class="spot-card">
+        <img src="./images/Fortview.jpg" alt="Fortview Hotel">
+        <div class="content">
+          <h3>Fortview Hotel</h3>
+          <p>Panoramic views, Wi-Fi, and local meals. ₹850/night</p>
+        </div>
+        <a class="book-btn" href="hotel-booking.html">Book Now</a>
+      </div>
+
+      <div class="spot-card">
+        <img src="./images/shantinivas.jpg" alt="Shanti Nivas Lodge">
+        <div class="content">
+          <h3>Shanti Nivas Lodge</h3>
+          <p>Simple rooms, local vibe, affordable pricing. ₹550/night</p>
+        </div>
+        <a class="book-btn" href="hotel-booking.html">Book Now</a>
+      </div>
+
+      <div class="spot-card">
+        <img src="./images/RiversideResidency.png" alt="Riverside Residency">
+        <div class="content">
+          <h3>Riverside Residency</h3>
+          <p>Peaceful stay with a balcony & river breeze. ₹1100/night</p>
+        </div>
+        <a class="book-btn" href="hotel-booking.html">Book Now</a>
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@500&display=swap');
+
+
+:root{
+    --orange:#ffa500;
+}
+
+*{
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  outline: none;border: none;
+  text-decoration: none;
+  transition: all .2s linear;
+}
+*::selection{
+    background: var(--orange);
+    color: #fff;
+}
+html{
+    font-size: 62.5%;
+    height: 580vh;
+    overflow-x: hidden;
+    
+    scroll-padding-top:6rem;
+    scroll-behavior: smooth;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background: rgb(0, 0, 0);
+
+    width:100%;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:2rem 1%;
+}
+
+section {
+    padding: 2rem 9%;  
+}
+.navbar .money{
+   background-color: #ffa500;
+   padding: 1rem;
+   box-shadow: 1px  1px 10px rgba(255, 157, 0, 0.994);
+}
+.planBtn{
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    cursor: pointer;
+
+    background-color: #ff8c00;
+    font-size: 16px;
+    padding: 4px 14px;
+    color: rgb(255, 255, 255);
+    border-radius: 9999px;
+    z-index: 100;
+}
+.planBtn:hover{
+    font-size: 20px;
+}
+.moneyBtn{
+    position: fixed;
+    right: 2rem;
+    bottom: 6rem;
+    cursor: pointer;
+    background-color: #ffa500;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    z-index: 100;
+}
+.moneyBtn:hover{
+    font-size: 20px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+}
+.heading {
+    text-align: center;
+}
+.heading span{
+    font-size: 3.5rem;
+    background:rgba(255, 166, 0, 0.35) ;
+    box-shadow: 0px 0px 10px rgba(255, 166, 0, 0.35);
+    color: var(--orange);
+    border-radius: 0.5rem;
+    padding: .2rem 1.1rem;
+    margin: 0.1rem;
+
+}
+.heading span.space{
+    background: none;
+    box-shadow: none;
+}
+header .logo{
+    font-size:2.5rem;
+    color:#fff;
+    text-transform:uppercase;
+    font-weight:bold;
+    letter-spacing:.1rem;
+    transform: translateX(40px);
+}
+header .logo span{
+    color:var(--orange);
+    font-size:2.8 rem;
+
+}
+header .navbar a{
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 1rem;
+}
+header .icons i{
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+   
+    margin-right: 5rem;
+}
+header .icons i:hover{
+    color: var(--orange);
+}
+
+header .search-bar-container{
+    position: absolute;
+    top: 100%;left: 0;right: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgb(240, 154, 160);
+    border-top: .1rem solid rgba(255,255,255,.2);
+
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+   clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 0,0 0);
+    transition: all .4s ease-in-out;
+}
+header .search-bar-container.active{
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 100% 100%,0 100%);
+
+}
+header .search-bar-container #search-bar{
+   width: 100%;
+   padding: 1rem;
+   text-transform: none;
+   color: #333;
+   font-size: 1.7 rem;
+   border-radius: .5rem;
+}
+header .search-bar-container label{
+    color: #fff;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1.5rem;
+    
+}
+ 
+#menu-bar{
+    color: #fff;
+    border: .1rem solid #fff;
+    border-radius:.5rem;
+    font-size: 3rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+
+}
+/* Header Ends */
+
+/* Login Form Starts */
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--orange);
+    color: #fff;
+    padding: .8rem 3rem;
+    border:.2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.7rem;
+
+}
+.btn:hover{
+    background: #fff;
+    color: var(--orange);
+}
+.login-form-container{
+    position:fixed;
+    top:-120%;left:0;
+    min-height:100vh;
+    z-index: 99999999;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transition:  .2s ease-in-out;
+}
+
+.login-form-container.showLogin{
+    top:0;
+}
+
+.login-form-container form{
+    margin: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    width: 50rem;
+}
+.login-form-container form h3{
+  font-size:x-large;
+  text-align: center;
+  text-transform: unset;
+  padding: 1rem 0;
+   
+}
+.login-form-container form .box{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    margin: 1rem 0;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    /* text-transform: none; */
+}
+.login-form-container form .box:focus{
+    border: 2px solid var(--orange);
+}
+
+.login-form-container #remember{
+    margin: 2rem 0rem;
+    cursor: pointer;
+}
+.login-form-container label{
+    font-size: 1.5rem;
+    padding: 2px;
+    
+}
+.login-form-container form p{
+   font-size: 1.5rem;
+}
+.login-form-container a{
+   padding: 2px 0;
+   color: var(--orange);
+
+}
+.login-form-container a:hover{
+    color: rgb(17, 0, 248);
+    text-decoration: underline;
+}
+.login-form-container form .btn{
+    display: block;
+    width:100%;
+    margin: 10px 0px;
+}
+.login-form-container #form-close{
+ position: absolute;
+ top: 2rem;right: 3rem;
+ font-size: 5rem;
+ color: #fff;  
+ cursor: pointer;
+}
+
+
+/* Home section */
+.home{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: column;
+    position: relative;
+    z-index: 0;
+}
+
+.home .content{
+   text-align: center;
+}
+
+.home .content h3{
+    color: #ffff;
+    font-size: 4.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.1);
+}
+.home .content p{
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.home .video-container video{
+    position: absolute;
+    top: 0;left:0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.home .controls{
+    padding: 1.2rem;
+    border-radius: 5rem;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 58rem;
+}
+
+.home .controls .vid-btn{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    border-radius:50%;
+    background: #fff;
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.home .controls .vid-btn.active{
+    background: var(--orange);
+}
+
+#vid-back{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: -5;
+}
+
+.book .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+
+}
+.book .row .image{
+    flex: 1 1 40rem;
+}
+.book .row .image img{
+  width: 100%;
+
+}
+.book .row form{
+    flex: 1 1 40rem;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+}
+
+.book .row form .inputBox{
+  padding: .5rem 0;
+}
+.book .row form .inputBox input{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+}
+
+.book .row form .inputBox input:focus{
+    border: 1px solid var(--orange);
+}
+.book .row form .inputBox h3{
+    font-size: 2rem;
+    color: #666;
+    padding: 0.5rem 0;
+}
+
+.packages .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 30px;
+    
+}
+.packages .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    
+}
+.packages .box-container .box p{
+    text-transform: none;
+}
+.packages .box-container .box:hover{
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+
+}
+.packages .box-container .box img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    /* width: 100%; */
+    /* object-fit: cover; */
+
+}
+.packages .box-container .box .content{
+    padding: 2rem;
+}
+.packages .box-container .box .content h3{
+    font-size: 2rem;
+    color: #333;
+}
+.packages .box-container .box .content h3 i{
+    color: var(--orange);
+    margin-right:1rem ;
+}
+.packages .box-container .box .content .stars {
+  font-size: 1.7rem;
+  color: var(--orange);
+}
+
+.packages .box-container .box .content p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.packages .box-container .box .content .price{
+    font-size: 2rem;
+    color: #333;
+    padding-top:1rem;
+
+}
+.packages .box-container .box .content .price span{
+    color: #666;
+    font-size: 1.5rem;
+    text-decoration:line-through;
+
+}
+
+.services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 30px;
+    
+}
+.services .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    
+}
+.services .box-container .box i{
+    padding: 1rem;
+    font-size: 5rem;
+    color: var(--orange);
+}
+.services .box-container .box h3{
+    font-size: 2.5rem;
+    color: #333; 
+}
+.services .box-container .box p{
+    font-size: 1.5rem;
+    color: #666; 
+    padding: 1rem 0;
+    text-transform: none;
+}
+.services .box-container .box:hover{
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.earnMoney{
+    background-image: linear-gradient(to right bottom, #8ee4ff, #a7eafc, #beeffa, #d4f4f9, #eaf8fa);  
+    height: 90vh;
+    width: auto;
+}
+.earnMoney h1{
+    position: relative;
+    color: rgb(245, 245, 245);
+    left: -5%;
+    font-size: 8rem;
+    line-height: 9.6rem;
+    text-align: left;
+    letter-spacing: .1rem;
+    font-family: 'Poppins', sans-serif;
+    /* transform: translateX(-10%); */
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, 0.1);
+    /* margin-top: 10rem; */
+}
+.earnMoney h3,h5{
+    position: relative;
+    text-align: left;
+    left: -4%;
+    top: 6%;
+    text-transform: none;
+    font-size: 2.5rem;
+    color: rgb(83, 83, 83);
+}
+.earnMoney h5{
+    top: 12%;
+    font-size: 2.8rem;
+    color: rgb(67, 65, 65);
+}
+.earnMoney button,h4{
+  border-radius: 30px;
+  position: relative;
+  top: 40%;
+  left: -3%;
+}
+.earnMoney button{
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    left: -4%; 
+    top: 35%;
+}
+.earnMoney .moneyAnimation{
+position: relative;
+
+right: -66%;
+top: -30%;
+
+    /* display: none; */
+    /* transform: translate(68rem,-22rem); */
+}
+
+.roles {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90vh;
+    gap: 2rem;
+    background-image: linear-gradient(to right bottom, #99ddf5, #a7e3f7, #b5e8fa, #c3eefc, #d0f3ff);
+    align-items: center;
+    justify-content: center;
+}
+.roles .box{
+    /* flex: 1 1 30rem; */
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    font-size: 1.5rem;
+    background: #fff;
+    text-align: left;
+    height: 55%;
+    width: 25%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.roles .box:hover{
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+.roles .box p{
+    text-transform: none;
+}
+.roles .box .animation{
+    position: relative;
+    left: 8%; 
+    object-fit: cover;
+}
+.roles .box .moneyOptions{
+    cursor: pointer;
+    margin-top: 1rem;
+    text-align: left;
+    font-weight: bolder;
+    letter-spacing: .1rem;
+    background: none;
+}
+.roles .tag{
+    font-size: 2rem;
+    color: rgb(2, 1, 86);
+    position: relative;
+    top: -5rem;
+    left: 5rem;
+    align-self: center;
+}
+
+
+
+/* Media Queries */
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+        
+        overflow-x: hidden;
+        scroll-padding-top:6rem;
+        scroll-behavior: smooth;
+    }
+    .roles .box{
+        flex: 1 1 20rem;
+    }
+    .roles .tag{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width:991px){
+   header{
+    padding: 2rem;
+
+   }
+   section{
+    padding: 2rem;
+   }
+}
+@media(max-width:768px){
+   #menu-bar{
+    display: initial;
+   }
+   header .navbar{
+    position: absolute;
+    top: 100%; right: 0; left: 0;
+    background: #000;
+    border-top: .1rem solid rgba(255,255,255,0.2);
+    padding: 1rem 2rem;
+   display: none;
+   }
+   header .navbar.active{
+    display: initial;
+   }
+   header .navbar a{
+    display: block;
+    border-radius: .5rem;
+    padding: 1.5rem ;
+    margin: 1.5rem 0;
+    background: #222;
+    
+   }
+   .home .controls{
+    display: none;
+   }
+}
+@media(max-width:450px){
+   html{
+    font-size: 50%;
+    overflow-x: hidden;
+   }
+   .heading span{
+    font-size: 2rem;
+   }
+}
+

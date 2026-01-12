@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login | Maheshwar Tourism</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #2e86c1, #48c9b0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2e86c1;
+    }
+
+    .login-container .input-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .login-container .input-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .login-container .input-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 0.9rem;
+      background-color: #2e86c1;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #21618c;
+    }
+
+    .login-container .footer {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .login-container .footer a {
+      color: #2e86c1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-container .admin-icon {
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      color: #2e86c1;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="admin-icon">
+      <i class="fa-solid fa-user-shield"></i>
+    </div>
+    <h2>Admin Login</h2>
+    <form id="adminLoginForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="admin" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password" required />
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    <div class="footer">
+      <p>Back to <a href="./project-DEMO.html">Home</a></p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('adminLoginForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = form.username.value.trim();
+      const password = form.password.value.trim();
+
+      // ✅ Hardcoded credentials (can later connect to backend/DB)
+      const adminUser = "admin";
+      const adminPass = "admin123";
+
+      if (username === adminUser && password === adminPass) {
+        alert("Login successful!");
+        // Save session storage (optional)
+        sessionStorage.setItem("isAdmin", "true");
+        window.location.href = "./admin-dashboard.html";
+      } else {
+        alert("Invalid credentials. Try again!");
+      }
+    });
+  </script>
+</body>
+</html>

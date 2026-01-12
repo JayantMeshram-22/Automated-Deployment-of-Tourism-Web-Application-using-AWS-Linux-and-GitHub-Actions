@@ -1,0 +1,201 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Trip - Maheshwar Tourism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background-color: #222; color: white; padding: 20px; text-align: center; }
+    header h1 { margin: 0; }
+    .booking-container { max-width: 700px; margin: 30px auto; background: #fff; padding: 30px;
+      border-radius: 10px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); }
+    .booking-container h2 { text-align: center; color: #ff9800; margin-bottom: 20px; }
+    label { margin-bottom: 5px; font-weight: 600; display: block; }
+    input, select, textarea {
+      padding: 12px; margin-bottom: 20px;
+      border-radius: 6px; border: 1px solid #ccc; font-size: 15px; width: 100%;
+    }
+    input[type="submit"] {
+      background-color: #ff9800; color: white; border: none; font-weight: bold;
+      cursor: pointer; transition: background 0.3s ease; padding: 12px;
+    }
+    input[type="submit"]:hover { background-color: #e68a00; }
+    .note { font-size: 13px; color: #777; text-align: center; margin-top: -10px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Maheshwar Tourism</h1>
+</header>
+
+<section class="booking-container">
+  <h2>Book Your Trip</h2>
+  <form id="tripBookingForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="location">Destination</label>
+    <select id="location" name="location" required>
+      <option value="">-- Select a location --</option>
+      <option value="Ahilya Fort">Ahilya Fort</option>
+      <option value="Ahilya Ghat">Ahilya Ghat</option>
+      <option value="Rajwada & Temples">Rajwada & Temples</option>
+      <option value="Jam Gate">Jam Gate</option>
+      <option value="Mandleshwar">Mandleshwar</option>
+      <option value="Navdatoli Site">Navdatoli Site</option>
+    </select>
+
+    <label for="guests">Number of Guests</label>
+    <input type="number" id="guests" name="guests" placeholder="e.g., 2" min="1" required>
+
+    <label for="arrival">Arrival</label>
+    <input type="date" id="arrival" name="arrival" required>
+
+    <label for="departure">Departure</label>
+    <input type="date" id="departure" name="departure" required>
+
+    <!-- ✅ Pickup / Drop >
+    <label for="pickup">Pickup From</label>
+    <input type="text" id="pickup" name="pickup" placeholder="Enter pickup location" required>
+
+    <label for="drop">Drop Location</label>
+    <input type="text" id="drop" name="drop" placeholder="Enter drop location" required>
+
+    <label for="notes">Special Requests (Optional)</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Let us know if you have any special requests..."></textarea>
+
+    <p class="note">* You will receive a confirmation email after successful booking.</p>
+
+    <input type="submit" value="Book Now">
+  </form>
+</section>
+
+<script>
+  // ✅ Check login status first
+  if (sessionStorage.getItem("isLoggedIn") !== "true") {
+    // Save current page for redirect
+    sessionStorage.setItem("redirectAfterLogin", window.location.pathname.split("/").pop());
+    alert("Please login first to book a trip.");
+    window.location.href = "login.html";
+  }
+
+  // ✅ Booking form handler
+  document.getElementById("tripBookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Your trip is confirmed!");
+    window.location.href = "project-DEMO.html"; // after booking, go home or bookings page
+  });
+</script>
+
+</body>
+</html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Trip - Maheshwar Tourism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background-color: #222; color: white; padding: 20px; text-align: center; }
+    header h1 { margin: 0; }
+    .booking-container { max-width: 700px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    .booking-container h2 { text-align: center; color: #ff9800; margin-bottom: 20px; }
+    label { margin-bottom: 5px; font-weight: 600; display: block; }
+    input, select, textarea { padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc; font-size: 15px; width: 100%; }
+    input[type="submit"] { background-color: #ff9800; color: white; border: none; font-weight: bold; cursor: pointer; transition: background 0.3s ease; padding: 12px; }
+    input[type="submit"]:hover { background-color: #e68a00; }
+    .note { font-size: 13px; color: #777; text-align: center; margin-top: -10px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<script>
+  // Pre-check: redirect to login if not logged in
+  if (localStorage.getItem('isLoggedIn') !== 'true') {
+    localStorage.setItem('redirectAfterLogin', window.location.pathname.split('/').pop());
+    window.location.href = 'login.html';
+  }
+</script>
+
+<header>
+  <h1>Maheshwar Tourism</h1>
+</header>
+
+<section class="booking-container">
+  <h2>Book Your Trip</h2>
+  <form id="tripBookingForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="location">Destination</label>
+    <select id="location" name="location" required>
+      <option value="">-- Select a location --</option>
+      <option value="Ahilya Fort">Ahilya Fort</option>
+      <option value="Ahilya Ghat">Ahilya Ghat</option>
+      <option value="Rajwada & Temples">Rajwada & Temples</option>
+      <option value="Jam Gate">Jam Gate</option>
+      <option value="Mandleshwar">Mandleshwar</option>
+      <option value="Navdatoli Site">Navdatoli Site</option>
+    </select>
+
+    <label for="guests">Number of Guests</label>
+    <input type="number" id="guests" name="guests" placeholder="e.g., 2" min="1" required>
+
+    <label for="arrival">Arrival</label>
+    <input type="date" id="arrival" name="arrival" required>
+
+    <label for="departure">Departure</label>
+    <input type="date" id="departure" name="departure" required>
+
+    <label for="pickup">Pickup From</label>
+    <input type="text" id="pickup" name="pickup" placeholder="Enter pickup location" required>
+
+    <label for="drop">Drop Location</label>
+    <input type="text" id="drop" name="drop" placeholder="Enter drop location" required>
+
+    <label for="notes">Special Requests (Optional)</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Let us know if you have any special requests..."></textarea>
+
+    <p class="note">* You will receive a confirmation email after successful booking.</p>
+
+    <input type="submit" value="Book Now">
+  </form>
+</section>
+
+<script>
+  // Pre-check: redirect to login if not logged in
+  if (localStorage.getItem('isLoggedIn') !== 'true') {
+    localStorage.setItem('redirectAfterLogin', window.location.pathname.split('/').pop());
+    alert('Please login first to book your trip.');
+    window.location.href = 'login.html';
+  }
+</script>
+
+<script>
+  document.getElementById('tripBookingForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('✅ Your trip booking is confirmed!');
+    window.location.href = 'project-DEMO.html';
+  });
+</script>
+
+
+</body>
+</html>
+
