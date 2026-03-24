@@ -1,0 +1,230 @@
+<!--DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Booking - Maheshwar Tourism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .booking-container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .booking-container h2 {
+      text-align: center;
+      color: #ff9800;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    input[type="submit"] {
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background-color: #e68a00;
+    }
+    .note {
+      font-size: 13px;
+      color: #777;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Maheshwar Tourism</h1>
+</header>
+
+<section class="booking-container">
+  <h2>Hotel Booking</h2>
+  <form onsubmit="submitHotelBooking(event)">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="hotel">Select Hotel</label>
+    <select id="hotel" name="hotel" required>
+      <option value="">-- Choose a hotel --</option>
+      <option value="Hotel Raj Palace">Hotel Raj Palace</option>
+      <option value="Ganga Guesthouse">Ganga Guesthouse</option>
+      <option value="Heritage Inn">Heritage Inn</option>
+      <option value="Fortview Hotel">Fortview Hotel</option>
+      <option value="Shanti Nivas Lodge">Shanti Nivas Lodge</option>
+      <option value="Riverside Residency">Riverside Residency</option>
+    </select>
+
+    <label for="rooms">Number of Rooms</label>
+    <input type="number" id="rooms" name="rooms" placeholder="e.g., 1" min="1" required>
+
+    <label for="guests">Number of Guests</label>
+    <input type="number" id="guests" name="guests" placeholder="e.g., 2" min="1" required>
+
+    <label for="checkin">Check-In Date</label>
+    <input type="date" id="checkin" name="checkin" required>
+
+    <label for="checkout">Check-Out Date</label>
+    <input type="date" id="checkout" name="checkout" required>
+
+    <label for="notes">Special Requests (Optional)</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Let us know if you need early check-in, late check-out, etc."></textarea>
+
+    <p class="note">* You will receive a confirmation email after successful booking.</p>
+
+    <input type="submit" value="Book Hotel">
+  </form>
+</section>
+
+<script>
+  function submitHotelBooking(event) {
+    event.preventDefault();
+    alert("Your hotel booking is confirmed! Redirecting to home page...");
+    window.location.href = "project-DEMO.html";
+  }
+</script>
+
+</body>
+</html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Booking - Maheshwar Tourism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f9f9f9; color: #333; }
+    header { background-color: #222; color: white; padding: 20px; text-align: center; }
+    header h1 { margin: 0; }
+    .hotel-container { max-width: 700px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    .hotel-container h2 { text-align: center; color: #ff9800; margin-bottom: 20px; }
+    label { margin-bottom: 5px; font-weight: 600; display: block; }
+    input, select, textarea { padding: 12px; margin-bottom: 20px; border-radius: 6px; border: 1px solid #ccc; font-size: 15px; width: 100%; }
+    input[type="submit"] { background-color: #ff9800; color: white; border: none; font-weight: bold; cursor: pointer; transition: background 0.3s ease; padding: 12px; }
+    input[type="submit"]:hover { background-color: #e68a00; }
+    .note { font-size: 13px; color: #777; text-align: center; margin-top: -10px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+<script>
+  // Pre-check: redirect to login if not logged in
+  if (localStorage.getItem('isLoggedIn') !== 'true') {
+    localStorage.setItem('redirectAfterLogin', window.location.pathname.split('/').pop());
+    alert('Please login first to continue with hotel booking.');
+    window.location.href = 'login.html';
+  }
+</script>
+
+<header>
+  <h1>Maheshwar Tourism</h1>
+</header>
+
+<section class="hotel-container">
+  <h2>Book Your Hotel</h2>
+  <form id="hotelBookingForm">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="hotel">Select Hotel</label>
+    <select id="hotel" name="hotel" required>
+      <option value="">-- Choose a Hotel --</option>
+      <option value="Ahilya Fort Heritage Stay">Ahilya Fort Heritage Stay</option>
+      <option value="River View Resort">River View Resort</option>
+      <option value="Narmada Retreat">Narmada Retreat</option>
+      <option value="Royal Palace Inn">Royal Palace Inn</option>
+      <option value="The Ghat Residency">The Ghat Residency</option>
+    </select>
+
+    <label for="room">Room Type</label>
+    <select id="room" name="room" required>
+      <option value="">-- Select Room Type --</option>
+      <option value="Single Room">Single Room</option>
+      <option value="Double Room">Double Room</option>
+      <option value="Suite">Suite</option>
+    </select>
+
+    <label for="checkin">Check-In Date</label>
+    <input type="date" id="checkin" name="checkin" required>
+
+    <label for="checkout">Check-Out Date</label>
+    <input type="date" id="checkout" name="checkout" required>
+
+    <label for="requests">Special Requests (Optional)</label>
+    <textarea id="requests" name="requests" rows="4" placeholder="Enter your requests..."></textarea>
+
+    <p class="note">* You will receive a confirmation email after booking.</p>
+
+    <input type="submit" value="Book Hotel">
+  </form>
+</section>
+
+<script>
+  // Pre-check: redirect to login if not logged in
+  if (localStorage.getItem('isLoggedIn') !== 'true') {
+    localStorage.setItem('redirectAfterLogin', window.location.pathname.split('/').pop());
+    alert('Please login first to continue with hotel booking.');
+    window.location.href = 'login.html';
+  }
+</script>
+
+<script>
+  document.getElementById('hotelBookingForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    alert('✅ Your hotel has been successfully booked!');
+    window.location.href = 'project-DEMO.html';
+  });
+</script>
+
+
+</body>
+</html>
